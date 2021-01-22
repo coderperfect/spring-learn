@@ -15,7 +15,7 @@
 	<description>Module08-02 and Module08-03</description>
 
 	<properties>
-		<java.version>15</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
