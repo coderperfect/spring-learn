@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+    <bean id="employee" class="com.cognizant.springlearn.bean.Employee">
+		<property name="id" value="563214"/>
+		<property name="name" value="Tony Stark"/>
+		<property name="salary" value="321546545.00"/>
+		<property name="permanent" value="true"/>
+		<property name="dateOfBirth" value="01/22/1956"/>
+		<property name="department" ref="rd"/>
+		<property name="skills">
+			<array>
+				<ref bean="skillHtml" />
+				<ref bean="skillCss" />
+				<ref bean="skillJs" />
+			</array>
+		</property>
+	</bean>
+	
+	<bean id="rd" class="com.cognizant.springlearn.bean.Department">
+		<property name="id" value="1001"/>
+		<property name="name" value="R&amp;D"/>
+	</bean>
+	
+	<bean id="skillHtml" class="com.cognizant.springlearn.bean.Skill">
+		<property name="id" value="1001"/>
+		<property name="name" value="HTML"/>
+	</bean>
+	
+	<bean id="skillCss" class="com.cognizant.springlearn.bean.Skill">
+		<property name="id" value="1002"/>
+		<property name="name" value="CSS"/>
+	</bean>
+	
+	<bean id="skillJs" class="com.cognizant.springlearn.bean.Skill">
+		<property name="id" value="1003"/>
+		<property name="name" value="Javascript"/>
+	</bean>
+	
+	<bean id="employeeDao" class="com.cognizant.springlearn.dao.EmployeeDao"/>
+	
+	<bean id="employeeService" class="com.cognizant.springlearn.service.EmployeeService" autowire="byName"/>
+	
+	<bean id="employeeController" class="com.cognizant.springlearn.controller.EmployeeController" autowire="byName"/>
+
+    <!-- <bean id="..." class="...">  
+        collaborators and configuration for this bean go here
+    </bean> -->
+
+    <!-- <bean id="..." class="...">
+        collaborators and configuration for this bean go here
+    </bean> -->
+
+    <!-- more bean definitions go here -->
+
+</beans>
